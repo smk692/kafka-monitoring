@@ -1,3 +1,39 @@
+
+
+# Kafka Monitoring tools 잘 정리되어있는 글이 있어서 번역 및 실행 방법을 공유하려고합니다. 
+
+
+# Monitoring tools for Apache Kafka ecosystem (PoC)
+
+해당 프로젝트의 목표는 Apache Kafka 다양한 모니터링을 어떻게 사용하는지 보여주는겁니다.
+
+### Caution
+해당 레파지토리에 있는 예제는 오직 테스트용도로 사용합니다.
+
+### Build and Install
+
+해당 내용은 직접 테스트 한 내용으로 기반합니다. 
+
+= build.gradle > bootBuildImage 설정이 되어있습니다.
+
+```
+1. 해당 테스트는 Docker Contanier 기반이며 Docker 를 깔아줍니다.
+2. Gradle > Tasks > build > bootBuildImage 실행
+3. cd docker/실행시키고 싶은 docker-compose 를 실행시킵니다. 
+    - ex) docker-compose -f docker-compose.yml up -d
+4. burrow -> linkedIn images 가 비공개또는 사라진것 같음으로 비슷한 내용에 이미지로 변경했습니다.    
+``` 
+
+# 테스트 결과
+
+- kowl 제일 사용하기 괜찮은듯합니다. 
+  - Jmx 및 lag 등 데이터를 수치로 보고싶을땐 prometheus, grafana 사용하는것도 좋습니다.
+  - AWS MSK 사용 가능 
+  - confluent kafka 사용 가능
+
+----------------------------------------------------------------------
+# 원본
+
 # Monitoring tools for Apache Kafka ecosystem (PoC)
 
 The goal of this project is to demonstrate different approaches how to monitor Apache Kafka ecosystem.
