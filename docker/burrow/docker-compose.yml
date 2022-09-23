@@ -3,14 +3,14 @@ services:
   burrow:
     hostname: burrow
     container_name: burrow
-    image: linkedin/burrow:v1.3.6
+    image: solsson/burrow
     volumes:
       - ./config:/etc/burrow/
     ports:
       - 8005:8000
     depends_on:
       - zookeeper
-      - broker
+      - kafka
     restart: always
 
   burrow-dashboard:
@@ -27,7 +27,7 @@ services:
   burrowUI:
     hostname: burrowUI
     container_name: burrowUI
-    image: generalmills/burrowui:1.1.0
+    image: nathkn/burrowui
     depends_on:
       - burrow
     ports:
